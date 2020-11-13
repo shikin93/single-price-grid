@@ -165,6 +165,10 @@ main {
     grid-area: feature;
     border-radius: 0 0 0.5em 0;
   }
+
+  .subscription__button {
+    margin: 3em 0 0;
+  }
 }
 
 /* desktop breakpoints */
