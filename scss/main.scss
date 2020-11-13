@@ -1,0 +1,147 @@
+// Primary color
+$cyan: hsl(179, 62%, 43%);
+$brightYellow: hsl(71, 73%, 54%);
+
+// neutral color
+$lightGrey: hsl(204, 43%, 93%);
+$grayishBlue: hsl(218, 22%, 67%);
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: $lightGrey;
+  color: $lightGrey;
+}
+
+/* Mobile First breakpoints*/
+
+/* MAIN */
+main {
+  max-width: 85%;
+  margin: 5em auto;
+  line-height: 1.5;
+
+  display: grid;
+  grid-template-areas:
+    "join"
+    "subscription"
+    "feature";
+}
+
+.join,
+.subscription,
+.feature {
+  padding: 1.5em 1.2em;
+}
+
+.join {
+  grid-area: join;
+  background-color: white;
+  border-radius: 0.5em 0.5em 0 0;
+  h3 {
+    color: $cyan;
+  }
+  p {
+    margin: 1em 0;
+    color: $grayishBlue;
+  }
+  & &__guarantee {
+    color: $brightYellow;
+  }
+}
+
+.subscription {
+  grid-area: subscription;
+  background-color: $cyan;
+
+  &__price {
+    display: flex;
+    align-items: center;
+    margin: 0.5em 0 0;
+  }
+  &__price--lg {
+    font-size: 2rem;
+    padding-right: 0.2em;
+  }
+
+  &__button {
+    width: 100%;
+    height: 3.5em;
+    margin: 1em 0;
+    background-color: $brightYellow;
+    color: $grayishBlue;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.2);
+  }
+  &__button:active {
+    background-color: hsl(71, 73%, 44%);
+  }
+}
+
+.feature {
+  grid-area: feature;
+  background-color: hsl(179, 62%, 45%);
+  border-radius: 0 0 0.5em 0.5em;
+
+  h3 {
+    margin-bottom: 1em;
+  }
+  ul {
+    list-style: none;
+  }
+}
+
+.attribution {
+  text-align: center;
+  color: $grayishBlue;
+  a {
+    text-decoration: none;
+    color: $brightYellow;
+  }
+}
+
+/* tablet breakpoints */
+@media screen and (min-width: 768px) {
+  main {
+    max-width: 80%;
+
+    grid-template-areas:
+      "join join"
+      "subscription feature";
+  }
+
+  .join,
+  .subscription,
+  .feature {
+    padding: 2em;
+  }
+
+  .join {
+    grid-area: join;
+  }
+  .subscription {
+    grid-area: subscription;
+    border-radius: 0 0 0 0.5em;
+  }
+  .feature {
+    grid-area: feature;
+    border-radius: 0 0 0.5em 0;
+  }
+}
+
+/* desktop breakpoints */
+@media screen and (min-width: 991px) {
+  main {
+    max-width: 45%;
+  }
+}
