@@ -30,10 +30,6 @@ main {
   line-height: 1.5;
 
   display: grid;
-  grid-template-areas:
-    "join"
-    "subscription"
-    "feature";
 }
 
 .join,
@@ -43,7 +39,6 @@ main {
 }
 
 .join {
-  grid-area: join;
   background-color: white;
   border-radius: 0.5em 0.5em 0 0;
   h3 {
@@ -59,7 +54,6 @@ main {
 }
 
 .subscription {
-  grid-area: subscription;
   background-color: $cyan;
 
   &__price {
@@ -89,7 +83,6 @@ main {
 }
 
 .feature {
-  grid-area: feature;
   background-color: hsl(179, 62%, 45%);
   border-radius: 0 0 0.5em 0.5em;
 
@@ -116,9 +109,7 @@ main {
   main {
     max-width: 80%;
 
-    grid-template-areas:
-      "join join"
-      "subscription feature";
+    grid-template-columns: 1fr 1fr;
   }
 
   .join,
@@ -128,14 +119,16 @@ main {
   }
 
   .join {
-    grid-area: join;
+    grid-column: span 2;
   }
   .subscription {
-    grid-area: subscription;
+    grid-column: 1;
+    grid-row: 2;
     border-radius: 0 0 0 0.5em;
   }
   .feature {
-    grid-area: feature;
+    grid-column: 2;
+    grid-row: 2;
     border-radius: 0 0 0.5em 0;
   }
 

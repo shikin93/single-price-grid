@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -22,9 +22,6 @@ main {
   line-height: 1.5;
   display: -ms-grid;
   display: grid;
-  grid-template-areas: "join"
-    "subscription"
-    "feature";
 }
 
 .join,
@@ -34,11 +31,6 @@ main {
 }
 
 .join {
-  -ms-grid-row: 1;
-  grid-row: 1;
-  -ms-grid-column: 1;
-  grid-column: 1;
-  grid-area: join;
   background-color: white;
   border-radius: 0.5em 0.5em 0 0;
 }
@@ -57,11 +49,6 @@ main {
 }
 
 .subscription {
-  -ms-grid-row: 2;
-  grid-row: 2;
-  -ms-grid-column: 1;
-  grid-column: 1;
-  grid-area: subscription;
   background-color: #2ab2af;
 }
 
@@ -70,8 +57,8 @@ main {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0.5em 0 0;
 }
 
@@ -85,12 +72,12 @@ main {
   height: 3.5em;
   margin: 1em 0;
   background-color: #c0df34;
-  color: white;
+  color: #98a6bd;
   border: none;
   border-radius: 0.5em;
   cursor: pointer;
   -webkit-box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 8px 2px rgba(0, 0, 0, 0.2);
 }
 
 .subscription__button:active {
@@ -98,11 +85,6 @@ main {
 }
 
 .feature {
-  -ms-grid-row: 3;
-  grid-row: 3;
-  -ms-grid-column: 1;
-  grid-column: 1;
-  grid-area: feature;
   background-color: #2cbab8;
   border-radius: 0 0 0.5em 0.5em;
 }
@@ -130,43 +112,31 @@ main {
 @media screen and (min-width: 768px) {
   main {
     max-width: 80%;
-    grid-template-areas: "join join"
-      "subscription feature";
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
-
   .join,
   .subscription,
   .feature {
     padding: 2em;
   }
-
   .join {
-    -ms-grid-row: 1;
-    grid-row: 1;
+    grid-column: span 2;
+  }
+  .subscription {
     -ms-grid-column: 1;
     grid-column: 1;
-    -ms-grid-column-span: 2;
-    grid-area: join;
-  }
-
-  .subscription {
     -ms-grid-row: 2;
     grid-row: 2;
-    -ms-grid-column: 1;
-    grid-column: 1;
-    grid-area: subscription;
     border-radius: 0 0 0 0.5em;
   }
-
   .feature {
-    -ms-grid-row: 2;
-    grid-row: 2;
     -ms-grid-column: 2;
     grid-column: 2;
-    grid-area: feature;
+    -ms-grid-row: 2;
+    grid-row: 2;
     border-radius: 0 0 0.5em 0;
   }
-
   .subscription__button {
     margin: 3em 0 0;
   }
@@ -178,5 +148,4 @@ main {
     max-width: 45%;
   }
 }
-
 /*# sourceMappingURL=main.css.map */
