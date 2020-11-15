@@ -18,7 +18,7 @@ body {
 /* MAIN */
 main {
   max-width: 85%;
-  margin: 5em auto;
+  margin: 8em auto 0;
   line-height: 1.5;
   display: -ms-grid;
   display: grid;
@@ -118,6 +118,7 @@ main {
 .attribution {
   text-align: center;
   color: #98a6bd;
+  margin: 5em;
 }
 
 .attribution a {
